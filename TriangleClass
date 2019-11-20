@@ -1,0 +1,89 @@
+// 10/28/19, Tarrant County College
+// Dr.Tyson McMillan
+// This was to figure out more about classes, get comfortable using them in different kinds of programs.
+// Finally understood how to properly use classes and their functions.
+#include <iostream>
+using namespace std;
+
+class Triangle
+{
+	private:
+		double width;
+		double length;
+	public:
+		void setWidth(double);
+		void setLength(double);
+		double getWidth() const;
+		double getLength() const;
+		double getArea() const;
+};
+
+void Triangle::setWidth(double w)
+{
+	width = w;
+}
+
+void Triangle::setLength(double len)
+{
+	length = len;
+}
+
+double Triangle::getWidth() const
+{
+	return width;
+}
+
+double Triangle::getLength() const
+{
+	return length;
+}
+
+double Triangle::getArea() const
+{
+	return width * length;
+}
+
+int main()
+{
+	double number; 
+	double totalArea;
+	Triangle Triangle1; 
+	Triangle Triangle2;
+	Triangle Triangle3;
+	
+	cout << "What is the length of Triangle 1?\t"; 
+	cin >> number;
+	Triangle1.setLength(number);
+  cout << "You entered " << Triangle1.getLength() << " for the Length" << endl
+	<< "What is the width of Triangle 1?\t";
+	cin >> number;
+	Triangle1.setWidth(number);
+  cout << "You entered " << Triangle1.getWidth() << " for the Width" << endl
+  << "The area of Triangle 1 is: " << Triangle1.getArea();
+	
+	cout << "\nWhat is the length of Triangle 2?\t"; 
+	cin >> number;
+	Triangle2.setLength(number);
+  cout << "You entered " << Triangle2.getLength() << " for the Length" << endl
+	<< "What is the width of Triangle 2?\t";
+	cin >> number;
+	Triangle2.setWidth(number);
+  cout << "You entered " << Triangle2.getWidth() << " for the Width" << endl
+  << "The area of Triangle 2 is: " << Triangle1.getArea();
+
+	cout << "\nWhat is the length of Triangle 3?\t"; 
+	cin >> number;
+	Triangle3.setLength(number);
+  cout << "You entered " << Triangle3.getLength() << " for the Length" << endl
+	<< "What is the width of Triangle 3?\t";
+	cin >> number;
+	Triangle3.setWidth(number);
+  cout << "You entered " << Triangle3.getWidth() << " for the Width" << endl
+  << "The area of Triangle 3 is: " << Triangle3.getArea();
+
+	totalArea = Triangle1.getArea() + Triangle2.getArea() + Triangle3.getArea();
+	
+	cout << "\nThe total area of the triangles is " << totalArea << endl; //output total area to user
+	
+	return 0; 
+}
